@@ -26,7 +26,8 @@ h1, h2,h3,h4,h5,h6, p{margin-bottom: 1rem;}
 }
 
 /* Start Page */
-.start-body {
+.over-body, .start-body {
+    text-align: center;
     color: white;
     flex-direction: column;
     align-items: center;
@@ -39,10 +40,10 @@ h1, h2,h3,h4,h5,h6, p{margin-bottom: 1rem;}
     padding: 40px;
     text-align: center;
 }
-.start-body .header h1 {
+.over-body .header h1,.start-body .header h1 {
     font-size: 40px;
 }
-.start-body .body {
+.game-over .body, .start-body .body {
     padding: 20px;
     text-align: center;
     display: flex;
@@ -50,18 +51,25 @@ h1, h2,h3,h4,h5,h6, p{margin-bottom: 1rem;}
     align-items: center;
 }
 .form-group {display:inline-block; margin-left: 30px; margin-bottom: 20px;}
+label,input{
+    cursor: pointer;
+}
 a {
     text-decoration: none;
 }
-.start-body .body a, .start-body .body button {
+.body a, .body button {
     font-size: 1.25rem;
     padding: 10px 20px;
     color: hsl(200, 100%, 50%);
     background: white;
     border-radius: .5rem;
     margin-left: 20px;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
 }
-.start-body .body a:hover, .start-body .body button:hover {
+.body a:hover, .body button:hover {
     background: hsl(200, 100%, 50%);
     color: white;
 }
@@ -72,8 +80,8 @@ a {
     width: 90vmin;
     height: 90vmin;
     display: grid;
-    grid-template-rows: repeat(40, 1fr);
-    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
 }
 
 .snack:first-child{

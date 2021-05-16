@@ -14,14 +14,14 @@
         <div class="header">
             <h1>Play Snack</h1>
 
-            <h2>High Score: <span>0</span></h2>
+            <h2>High Score: <span id="high-score">0</span></h2>
         </div>
         <div class="body">
             <h4>Speed</h4>
             <div>
                 <div class="form-group" style="margin-left: 0;">
                     <label for="snail">Snail</label>
-                    <input type="radio" name="speed" value="1" id="snail">
+                    <input type="radio" name="speed" value="1" id="snail" checked>
                 </div>
                 <div class="form-group">
                     <label for="person">Person</label>
@@ -35,8 +35,13 @@
                     <label for="flash">Flash</label>
                     <input type="radio" name="speed" value="20" id="flash">
                 </div>
+                <div class="form-group">
+                    <label for="super_man">Super Man</label>
+                    <input type="radio" name="speed" value="30" id="super_man">
+                </div>
             </div>
             <a href="./play.html">Play</a>
+            <button style="margin-top: 20px" id="resetHighScore">Reset High Score</button>
         </div>
     </div>
     <script src="./js/start.js" defer type="module"></script>

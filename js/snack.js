@@ -4,7 +4,7 @@ import { SCORE } from './scores.js'
 const SNACK_BODY = [{ x: 11, y: 11 }]
 let newSegment = 0
 
-export const SNACK_SPEED = 30
+export const SNACK_SPEED = SCORE.getSpeed()
 
 export const SNACK = {
     RESET() {

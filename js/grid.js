@@ -1,4 +1,4 @@
-const GRID_SIZE = 40
+const GRID_SIZE = 21
 
 export const GRID = {
     random() {
