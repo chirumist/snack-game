@@ -1,0 +1,104 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    background: #111111;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.container {
+    width: 100%;
+    max-width: 1080px;
+}
+ul, li {list-style: none;}
+
+ul {
+    margin-bottom: 50px;
+}
+
+h1, h2,h3,h4,h5,h6, p{margin-bottom: 1rem;}
+.wrapper {
+    display: flex;
+    place-content: center;
+}
+
+/* Start Page */
+.start-body {
+    color: white;
+    flex-direction: column;
+    align-items: center;
+}
+.over-body {
+    flex-direction: column;
+    align-items: center;
+}
+.start-body .header {
+    padding: 40px;
+    text-align: center;
+}
+.start-body .header h1 {
+    font-size: 40px;
+}
+.start-body .body {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group {display:inline-block; margin-left: 30px; margin-bottom: 20px;}
+a {
+    text-decoration: none;
+}
+.start-body .body a, .start-body .body button {
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    color: hsl(200, 100%, 50%);
+    background: white;
+    border-radius: .5rem;
+    margin-left: 20px;
+}
+.start-body .body a:hover, .start-body .body button:hover {
+    background: hsl(200, 100%, 50%);
+    color: white;
+}
+/* Play Page */
+.game-board {
+    position: relative;
+    background: #ccc;
+    width: 90vmin;
+    height: 90vmin;
+    display: grid;
+    grid-template-rows: repeat(40, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+}
+
+.snack:first-child{
+    background-color: hsl(200, 80%, 40%);
+}
+.snack {
+    background-color: hsl(200, 80%, 60%);
+}
+.snack:last-child{
+    background-color: hsl(200, 80%, 80%);
+}
+
+.snack-food {
+    background-color: hsl(40, 80%, 60%);
+    border-radius: 10px;
+}
+.score-board{
+    color: white;
+    display:flex;
+    justify-content: center;
+    padding: 2vmin;
+}
+.score {
+    padding: 0 35vmin;
+}
+.high-score {
+    padding: 0 35vmin;
+}
