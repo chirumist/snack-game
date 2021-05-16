@@ -7,6 +7,8 @@ let IS_GAMEOVER = false
 const gameBoard = document.querySelector('.game-board')
 const scoreBoard = document.querySelector('.score-board')
 SCORE.setScore(0)
+
+document.documentElement.style.setProperty('--grid-size', localStorage.getItem('grid-size'));
 function main(currentTime) {
     if (IS_GAMEOVER) {
         if (SCORE.getScore() >= SCORE.getHighScore()) {

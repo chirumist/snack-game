@@ -1,6 +1,8 @@
 import {SCORE} from './scores.js'
 const speedInputs = document.querySelectorAll('[name="speed"]')
 
+const sizeInputs = document.querySelectorAll('[name="size"]')
+
 const resetHighScore = document.querySelector('#resetHighScore')
 
 const checkHighScore = () => {
@@ -14,6 +16,12 @@ checkHighScore()
 Array.from(speedInputs, (speed) => {
     speed.addEventListener("change", (e) => {
         SCORE.setSpeed(Number(speed.value))
+    })
+})
+
+Array.from(sizeInputs, (size) => {
+    size.addEventListener("change", (e) => {
+        localStorage.setItem('grid-size', size.value)
     })
 })
 

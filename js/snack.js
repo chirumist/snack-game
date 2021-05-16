@@ -22,11 +22,18 @@ export const SNACK = {
         SNACK_BODY[0].y += inputDirection.y
     },
     DRAW(gameBoard) {
-        SNACK_BODY.forEach(segment => {
+        SNACK_BODY.forEach((segment,index) => {
             const snackElem = document.createElement('div')
             snackElem.style.gridRowStart = segment.y
             snackElem.style.gridColumnStart = segment.x
             snackElem.classList.add('snack')
+            if (index == 0) {
+                snackElem.classList.add('snack-head')
+            }
+            
+            if (SNACK_BODY.length !== 1 &&(SNACK_BODY.length - 1) == index) {
+                snackElem.classList.add('snack-tail')
+            }
             gameBoard.append(snackElem)
         })
     },

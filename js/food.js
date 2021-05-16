@@ -8,7 +8,6 @@ export const FOOD = {
     UPDATE() {
         if (SNACK.OnCollision(food)) {
             SNACK.EXPAND_SNACK(EXPANSION_RATE)
-            console.log("Food Update")
             food = RANDOM_POSITION()
         }
     },
@@ -17,7 +16,7 @@ export const FOOD = {
         foodElem.style.gridRowStart = food.y
         foodElem.style.gridColumnStart = food.x
         foodElem.classList.add('snack-food')
-        gameBoard.append(foodElem)
+        gameBoard.prepend(foodElem)
     }
 }
 
