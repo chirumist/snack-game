@@ -11,6 +11,8 @@ const checkHighScore = () => {
 
 SCORE.setSpeed(1)
 
+localStorage.setItem('grid-size', 21)
+
 checkHighScore()
 
 Array.from(speedInputs, (speed) => {
