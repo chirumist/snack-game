@@ -1,10 +1,10 @@
-const startMusicPlayer = new Audio('./../sounds/start.wav')
-const snackSFXPlayer = new Audio('./../sounds/snack01.mp3')
-const foodSFXPlayer = new Audio('./../sounds/food-eat.wav')
-const bgMusicPlayer = new Audio('./../sounds/background.mp3')
-const gameOverPlayer = new Audio('./../sounds/gameover.mp3')
+const startMusicPlayer = new Audio('./sounds/start.wav')
+const snackSFXPlayer = new Audio('./sounds/snack01.mp3')
+const foodSFXPlayer = new Audio('./sounds/food-eat.wav')
+const bgMusicPlayer = new Audio('./sounds/background.mp3')
+const gameOverPlayer = new Audio('./sounds/gameover.mp3')
 
-startMusicPlayer.volume = 0.7
+startMusicPlayer.volume = 0.5
 snackSFXPlayer.volume = 0.2
 foodSFXPlayer.volume = 0.8
 bgMusicPlayer.volume = 0.5
