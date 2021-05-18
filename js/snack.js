@@ -42,9 +42,12 @@ export const SNACK = {
             gameBoard.append(snackElem)
         })
     },
-    EXPAND_SNACK(amount) {
+    EXPAND_SNACK(amount, score) {
         Sounds.foodSFX('play')
-        SCORE.setScore(amount)
+        SCORE.setScore(score)
+        if (SCORE.getScore() >= SCORE.getHighScore()) {
+            SCORE.setHighScore(score)
+        }
         newSegment += amount
     },
     OnCollision(position, { ignoreHead = false } = {}) {

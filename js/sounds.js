@@ -8,6 +8,7 @@ startMusicPlayer.volume = 0.5
 snackSFXPlayer.volume = 0.2
 foodSFXPlayer.volume = 0.8
 bgMusicPlayer.volume = 0.5
+
 export const Sounds = {
     startMusic(status) {
         this.musicFunctions(status, startMusicPlayer)
