@@ -1,4 +1,3 @@
-import { gameBoard } from './index.js'
 import { SNACK, SNACK_SPEED } from './snack.js'
 import { GRID } from './grid.js'
 import { SCORE } from './scores.js'
@@ -9,6 +8,8 @@ let powerFood = RANDOM_POSITION()
 const EXPANSION_RATE = 1
 
 let isPowerFood = false
+const timeOut = 5000
+let clockTimer
 export const FOOD = {
     UPDATE() {
         if (SNACK.OnCollision(food)) {
@@ -32,6 +33,16 @@ export const FOOD = {
             SNACK.EXPAND_SNACK(EXPANSION_RATE, score)
             if (!((SCORE.getScore() / score) % 5)) {
                 isPowerFood = true
+                Sounds.clockSound('play')
+                clockTimer = setInterval(() => {
+                    Sounds.clockSound('play')
+                }, 2000)
+                setTimeout(() => {
+                    isPowerFood = false
+                    powerFood = RANDOM_POSITION()
+                    Sounds.clockSound('pause')
+                    clearInterval(clockTimer)
+                }, timeOut);
             }
             food = RANDOM_POSITION()
         }
@@ -56,6 +67,8 @@ export const FOOD = {
             SNACK.EXPAND_SNACK(EXPANSION_RATE + 2, score)
             powerFood = RANDOM_POSITION()
             isPowerFood = false
+            Sounds.clockSound('pause')
+            clearInterval(clockTimer)
         }
     },
     DRAW(gameBoard) {

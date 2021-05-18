@@ -3,6 +3,7 @@ const snackSFXPlayer = new Audio('./sounds/snack01.mp3')
 const foodSFXPlayer = new Audio('./sounds/food-eat.wav')
 const bgMusicPlayer = new Audio('./sounds/background.mp3')
 const gameOverPlayer = new Audio('./sounds/gameover.mp3')
+const clockPlayer = new Audio('./sounds/clockfast.mp3')
 
 startMusicPlayer.volume = 0.5
 snackSFXPlayer.volume = 0.2
@@ -25,6 +26,9 @@ export const Sounds = {
     gameOver(status) {
         this.musicFunctions(status, gameOverPlayer)
     },
+    clockSound(status, timer) {
+        this.musicFunctions(status, clockPlayer)
+    },
     musicFunctions(status, player) {
         switch (status) {
             case 'play':
@@ -37,11 +41,12 @@ export const Sounds = {
                 break;
             
             case 'reset':
-                player.reset()
+                audio.currentTime = 0
                 break;
             
             case 'stop':
-                player.stop()
+                sound.pause();
+                sound.currentTime = 0;
                 break;
         
             default:
