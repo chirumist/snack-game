@@ -1,4 +1,5 @@
-import {SCORE} from './scores.js'
+import { SCORE } from './scores.js'
+import { Sounds } from './sounds.js'
 const speedInputs = document.querySelectorAll('[name="speed"]')
 
 const sizeInputs = document.querySelectorAll('[name="size"]')
@@ -14,6 +15,10 @@ SCORE.setSpeed(1)
 localStorage.setItem('grid-size', 21)
 
 checkHighScore()
+Sounds.startMusic('play')
+setInterval(() => {
+   Sounds.startMusic('play')
+}, 2500);
 
 Array.from(speedInputs, (speed) => {
     speed.addEventListener("change", (e) => {

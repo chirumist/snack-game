@@ -1,5 +1,6 @@
 import { getInputDirection } from './input.js'
 import { SCORE } from './scores.js'
+import { Sounds } from './sounds.js'
 
 const SNACK_BODY = [{ x: 11, y: 11 }]
 let newSegment = 0
@@ -18,8 +19,12 @@ export const SNACK = {
         for (let index = SNACK_BODY.length - 2; index >= 0; index--) {
             SNACK_BODY[index + 1] = { ...SNACK_BODY[index] }
         }
-        SNACK_BODY[0].x += inputDirection.x
-        SNACK_BODY[0].y += inputDirection.y
+        if (inputDirection.x == 0 && inputDirection.y == 0) {
+        } else {
+            Sounds.snackSFX('play')
+            SNACK_BODY[0].x += inputDirection.x
+            SNACK_BODY[0].y += inputDirection.y
+        }
     },
     DRAW(gameBoard) {
         SNACK_BODY.forEach((segment,index) => {
@@ -38,6 +43,7 @@ export const SNACK = {
         })
     },
     EXPAND_SNACK(amount) {
+        Sounds.foodSFX('play')
         SCORE.setScore(amount)
         newSegment += amount
     },
