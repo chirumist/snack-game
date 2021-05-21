@@ -2,13 +2,20 @@ import { SNACK_SPEED, SNACK } from "./snack.js"
 import { FOOD } from "./food.js"
 import { GRID } from "./grid.js"
 import { SCORE } from './scores.js'
+import { Sounds } from './sounds.js'
+
+export const gameBoard = document.querySelector('.game-board')
+export const scoreBoard = document.querySelector('.score-board')
+
 let lastRenderedTime = 0
 let IS_GAMEOVER = false
-const gameBoard = document.querySelector('.game-board')
-const scoreBoard = document.querySelector('.score-board')
 SCORE.setScore(0)
 
 document.documentElement.style.setProperty('--grid-size', localStorage.getItem('grid-size'));
+Sounds.bgMusic('play')
+setInterval(() => {
+   Sounds.bgMusic('play')
+}, 3000);
 function main(currentTime) {
     if (IS_GAMEOVER) {
         if (SCORE.getScore() >= SCORE.getHighScore()) {
@@ -36,7 +43,7 @@ function update() {
 function draw() {
     clear()
     SNACK.DRAW(gameBoard)
-    FOOD.DRAW(gameBoard)    
+    FOOD.DRAW(gameBoard)
     SCORE.DRAW(scoreBoard)
 }
 

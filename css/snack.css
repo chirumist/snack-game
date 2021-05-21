@@ -105,7 +105,13 @@ a {
 .snack-food {
     background-color: hsl(10, 100%, 80%);
     border-radius: 10px;
-    box-shadow: 0 0px 4px 0 hsla(10, 100%, 60%, .8);
+    box-shadow: 0 0px 4px 0 hsla(0, 100%, 50%, .8);
+}
+.snack-power-food {
+    transform: scale(1.1);
+    background-color: hsl(80, 100%, 80%);
+    border-radius: 10px;
+    box-shadow: 0 0px 4px 0 hsla(80, 100%, 60%, .8);
 }
 .score-board{
     color: white;

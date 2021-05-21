@@ -1,6 +1,10 @@
 import { getInputDirection } from './input.js'
 import { SCORE } from './scores.js'
+<<<<<<< HEAD
 import { GRID_SIZE} from './grid.js'
+=======
+import { Sounds } from './sounds.js'
+>>>>>>> 2e4449c431b8658a280da324f08325687e83fb23
 
 export const SNACK_BODY = [{ x: 11, y: 11 }]
 let newSegment = 0
@@ -20,8 +24,12 @@ export const SNACK = {
             SNACK_BODY[index + 1] = { ...SNACK_BODY[index] }
         }
 
-        SNACK_BODY[0].x += inputDirection.x
-        SNACK_BODY[0].y += inputDirection.y
+        if (inputDirection.x == 0 && inputDirection.y == 0) {
+        } else {
+            Sounds.snackSFX('play')
+            SNACK_BODY[0].x += inputDirection.x
+            SNACK_BODY[0].y += inputDirection.y
+        }
         // if(inputDirection.x == 1) {
         //     if(SNACK_BODY[0].x > GRID_SIZE) {
         //         SNACK_BODY[0].x = 1
@@ -57,8 +65,12 @@ export const SNACK = {
             gameBoard.append(snackElem)
         })
     },
-    EXPAND_SNACK(amount) {
-        SCORE.setScore(amount)
+    EXPAND_SNACK(amount, score) {
+        Sounds.foodSFX('play')
+        SCORE.setScore(score)
+        if (SCORE.getScore() >= SCORE.getHighScore()) {
+            SCORE.setHighScore(score)
+        }
         newSegment += amount
     },
     OnCollision(position, { ignoreHead = false } = {}) {
