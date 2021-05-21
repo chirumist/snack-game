@@ -1,4 +1,4 @@
-const GRID_SIZE = localStorage.getItem('grid-size');
+export const GRID_SIZE = localStorage.getItem('grid-size');
 
 export const GRID = {
     random() {

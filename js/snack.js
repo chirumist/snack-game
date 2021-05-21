@@ -1,7 +1,8 @@
 import { getInputDirection } from './input.js'
 import { SCORE } from './scores.js'
+import { GRID_SIZE} from './grid.js'
 
-const SNACK_BODY = [{ x: 11, y: 11 }]
+export const SNACK_BODY = [{ x: 11, y: 11 }]
 let newSegment = 0
 
 export const SNACK_SPEED = SCORE.getSpeed()
@@ -18,8 +19,27 @@ export const SNACK = {
         for (let index = SNACK_BODY.length - 2; index >= 0; index--) {
             SNACK_BODY[index + 1] = { ...SNACK_BODY[index] }
         }
+
         SNACK_BODY[0].x += inputDirection.x
         SNACK_BODY[0].y += inputDirection.y
+        // if(inputDirection.x == 1) {
+        //     if(SNACK_BODY[0].x > GRID_SIZE) {
+        //         SNACK_BODY[0].x = 1
+        //     }
+        // } else {
+        //     if (SNACK_BODY[0].x == 0) {
+        //         SNACK_BODY[0].x = (GRID_SIZE -1)
+        //     }
+        // }
+        // if(inputDirection.y == 1) {
+        //     if(SNACK_BODY[0].y > GRID_SIZE) {
+        //         SNACK_BODY[0].y = 1
+        //     }
+        // } else {
+        //     if(SNACK_BODY[0].y == 0) {
+        //         SNACK_BODY[0].y = (GRID_SIZE - 1)
+        //     }
+        // }
     },
     DRAW(gameBoard) {
         SNACK_BODY.forEach((segment,index) => {
