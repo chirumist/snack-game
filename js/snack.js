@@ -27,12 +27,13 @@ export const SNACK = {
             SNACK_BODY[0].x += inputDirection.x
             SNACK_BODY[0].y += inputDirection.y
             if(inputDirection.x == 1) {
+                console.log(SNACK_BODY[0].x, GRID_SIZE)
                 if(SNACK_BODY[0].x > GRID_SIZE) {
                     SNACK_BODY[0].x = 1
                 }
             } else {
                 if (SNACK_BODY[0].x == 0) {
-                    SNACK_BODY[0].x = (GRID_SIZE -1)
+                    SNACK_BODY[0].x = GRID_SIZE
                 }
             }
             if(inputDirection.y == 1) {
@@ -41,7 +42,7 @@ export const SNACK = {
                 }
             } else {
                 if(SNACK_BODY[0].y == 0) {
-                    SNACK_BODY[0].y = (GRID_SIZE - 1)
+                    SNACK_BODY[0].y = GRID_SIZE
                 }
             }
         }
